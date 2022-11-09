@@ -24,7 +24,7 @@ pipeline{
         }
         stage("Sonar Analysis"){
             steps{
-            withSonarQubeEnv("Test_SonarQube")
+            withSonarQubeEnv("sonar-tc")
                 {
 		    bat "echo Sonar Run half"
                         bat "mvn sonar:sonar"        
