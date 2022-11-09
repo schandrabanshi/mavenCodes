@@ -31,7 +31,25 @@ pipeline{
                 }
             }
         }
-        
+        stage("Publish to Artifactory"){
+            steps{
+                rtMavenDeployer(
+                    id: 'deployer',
+                    serverId: 'saroj_artifactory',
+                    releaseRepo: 'Saroj_Artifactory',
+                    snapshotRepo: 'Saroj_Artifactory'
+                )
+                rtMavenRun(
+                    pom: 'pom.xml',
+                    goals: 'clean install',
+                    deployerId: 'deployer'
+                    )
+                rtPublishBuildInfo(
+                    serverId:'saroj_artifactory',
+                )
+            }        
+        }
+    
     }
     post{
         success{
