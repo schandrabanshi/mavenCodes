@@ -185,17 +185,17 @@
 		</dependency>
 	</dependencies>
 	<build>
+		<testResources>
+			<testResource>
+				<directory>src/main/webapp</directory>
+			</testResource>
+		</testResources>
+		<finalName>devopssampleapplication</finalName>		
 		<plugins><plugin>    
                              <groupId>org.apache.maven.plugins</groupId>    
                              artifactId>maven-war-plugin</artifactId>    
                              <version>3.3.1</version>
               <configuration><failOnMissingWebXml>false</failOnMissingWebXml></configuration>
               </plugin></plugins>
-		<testResources>
-			<testResource>
-				<directory>src/main/webapp</directory>
-			</testResource>
-		</testResources>
-		<finalName>devopssampleapplication</finalName>
 	</build>
 </project>
