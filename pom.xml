@@ -9,12 +9,7 @@
 	<name>Devops Sample Application</name>
 	<url>http://maven.apache.org</url>
 	<properties>   <maven.compiler.source>17</maven.compiler.source>   <maven.compiler.target>17</maven.compiler.target></properties>
-	<build><plugins><plugin>    
-		<groupId>org.apache.maven.plugins</groupId>    
-		artifactId>maven-war-plugin</artifactId>    
-		<version>3.3.1</version>
-		<configuration><failOnMissingWebXml>false</failOnMissingWebXml></configuration>
-	</plugin></plugins></build>
+	
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -190,6 +185,12 @@
 		</dependency>
 	</dependencies>
 	<build>
+		<plugins><plugin>    
+                             <groupId>org.apache.maven.plugins</groupId>    
+                             artifactId>maven-war-plugin</artifactId>    
+                             <version>3.3.1</version>
+              <configuration><failOnMissingWebXml>false</failOnMissingWebXml></configuration>
+              </plugin></plugins>
 		<testResources>
 			<testResource>
 				<directory>src/main/webapp</directory>
